@@ -1,0 +1,48 @@
+﻿{% extends 'pages/base.html' %}
+{% load static %}
+
+
+{% block content %}
+<div class="about">
+	<div class="#">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-5">
+					<div class="book_room">
+						<h1>Book a Room Online</h1>
+						<form class="book_now" method="POST" action="{% url 'submitted_bookings' %}" id="">
+							{% csrf_token %}
+							<div class="row">
+								<div class="col-md-12">
+									<span>email</span>
+									<img class="date_cua" src="{% static 'img/emailicon.png' %}">
+									<input class="online_book" placeholder="email" type="email" name="email">
+								</div>
+								<div class="col-md-12">
+									<span>Arrival</span>
+									<img class="date_cua" src="{% static 'img/date.png' %}">
+									<input class="online_book" placeholder="dd/mm/yyyy" type="date" name="arrival">
+								</div>
+								<div class="col-md-12">
+									<span>Departure</span>
+									<img class="date_cua" src="{% static 'img/date.png' %}">
+									<input class="online_book" placeholder="dd/mm/yyyy" type="date" name="departure">
+								</div>
+								<div class="col-md-12">
+									<span>How many Rooms?</span>
+									<img class="date_cua" src="{% static 'img/roomicon.png' %}">
+									<input class="online_book" placeholder="rooms" type="number" name="rooms">
+								</div>
+								<div class="col-md-12">
+									<button type="submit" class="book_btn">Book
+										Now</button></a>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock content %}
